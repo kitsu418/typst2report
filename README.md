@@ -14,3 +14,10 @@ $ typst compile report.typ
 
 编译结果为 `report.pdf` 。
 
+<p align="center">
+  <img height=250 src="./assets/report-1.png">
+  <img height=250 src="./assets/report-2.png">
+  <img height=250 src="./assets/report-3.png">
+  <img height=250 src="./assets/report-4.png">
+</p>
+
