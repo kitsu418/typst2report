@@ -388,10 +388,24 @@
 
   counter(page).update(1)
 
-  // 代码块(TODO: 加入行数)
-  show raw: it => {
-    set text(font: songti, 12pt)
-    set block(inset: 5pt, fill: rgb(217, 217, 217, 1), width: 100%)
+  // 代码块
+  show raw.where(block: true): it => grid(
+    columns: 2,
+    align: (right, left),
+    gutter: 5pt,
+    inset: 5pt,
+    fill: rgb(217, 217, 217, 1),
+    ..it.lines
+      .enumerate()
+      .map(((i, line)) => (text(gray)[#(i + 1)], {
+          set text(12pt)
+          line
+        }))
+      .flatten()
+  ) + empty_par()
+
+  show raw.where(block: false): it => {
+    set text(12pt)
     it
   }
 
